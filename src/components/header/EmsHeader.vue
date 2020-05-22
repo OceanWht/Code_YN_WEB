@@ -1,27 +1,53 @@
 <template>
-      <el-row >
-        <el-col :span="4" class="ems_header_title">测试企业·综合能源管理系统</el-col>
-        <el-col :span="4" class="ems_header_title"></el-col>
-      </el-row>
+  <el-row>
+    <el-col :span="4" class="ems_header_title"><span>新联电子能耗在线监测系统</span></el-col>
+    <el-col :span="4" :offset="16">
+      <el-dropdown>
+        <el-avatar> user</el-avatar>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>登出</el-dropdown-item>
+          <el-dropdown-item disabled>修改密码</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
 
-    export default {
-        name: "emsHeader"
-    }
+  export default {
+    name: "emsHeader"
+  }
 </script>
 
 <style scoped>
   .el-row {
     height: 100%;
-    background: url("./static/imgs/top-bj-12.png") no-repeat center;
+    margin-left: -1%;
+    background: url("./static/imgs/top-bj-12.png") ;
+  }
+
+  .el-avatar {
+    margin-top: 11px;
   }
 
   .ems_header_title {
-    font-size: 25px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #ffffff;
-    margin-top: 0.6%;
+    white-space: normal;
+  }
+
+  .ems_header_title span {
+    text-align: left;
+    font-size: 23px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
 </style>

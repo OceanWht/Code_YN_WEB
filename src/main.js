@@ -7,12 +7,13 @@ import ElementUI  from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './utils/flexible'
 import EmsHeader from './components/header/EmsHeader'
+import axios from 'axios'
 
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 Vue.component('ems-header',EmsHeader);
-
+Vue.prototype.$http = axios
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

@@ -1,0 +1,35 @@
+{
+  "success": true,
+  "code": "200",
+  "message": "请求处理成功！",
+  "data": [
+    {
+      "code": "A0111",
+      "fullName": "稻谷种植",
+      "jgzh": false,
+      "name": "稻谷种植",
+      "pcode": "A011"
+    },
+    {
+      "code": "A0112",
+      "fullName": "小麦种植",
+      "jgzh": false,
+      "name": "小麦种植",
+      "pcode": "A011"
+    },
+    {
+      "code": "A0113",
+      "fullName": "玉米种植",
+      "jgzh": false,
+      "name": "玉米种植",
+      "pcode": "A011"
+    },
+    {
+      "code": "A0119",
+      "fullName": "其他谷物种植",
+      "jgzh": false,
+      "name": "其他谷物种植",
+      "pcode": "A011"
+    }
+  ]
+}

@@ -10,6 +10,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
+//配置本地json
+const express = require('express');
+const app = express();
+const regionData = require('../region.json');
+const regionList = regionData.regionList;
+const energyTypeList = regionData.energyTypeList;
+const  IndustryCodesOne = regionData.IndustryCodesOne;
+const  IndustryCodesTwo = regionData.IndustryCodesTwo;
+const  IndustryCodesThree = regionData.IndustryCodesThree;
+const  IndustryCodesFour = regionData.IndustryCodesFour;
+const apiRoutes = express.Router();
+app.use('/regionData', apiRoutes);
+
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
@@ -42,6 +55,47 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
+    },
+
+    //添加本地json
+    before(app) {
+      app.get('/regionData/regionList', (req, res) => {
+        res.json({
+          errno: 0,
+          data: regionList
+        })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
+      }),
+        app.get('/regionData/energyTypeList', (req, res) => {
+          res.json({
+            errno: 0,
+            data: energyTypeList
+          })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
+        }),
+        app.get('/regionData/IndustryCodesOne', (req, res) => {
+          res.json({
+            errno: 0,
+            data: IndustryCodesOne
+          })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
+        }),
+        app.get('/regionData/IndustryCodesTwo', (req, res) => {
+          res.json({
+            errno: 0,
+            data: IndustryCodesTwo
+          })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
+        }),
+        app.get('/regionData/IndustryCodesThree', (req, res) => {
+          res.json({
+            errno: 0,
+            data: IndustryCodesThree
+          })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
+        }),
+        app.get('/regionData/IndustryCodesFour', (req, res) => {
+          res.json({
+            errno: 0,
+            data: IndustryCodesFour
+          })//接口返回json数据，上面配置的数据seller就赋值给data请求后调用
+        })
+
     }
   },
   plugins: [

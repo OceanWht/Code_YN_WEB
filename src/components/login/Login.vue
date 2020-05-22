@@ -2,7 +2,7 @@
   <div class="login" :style="'height:'+fullHeight+'px;'">
     <el-container direction="vertical">
       <el-header>
-          <img src="./static/imgs/login_title.png" class="imgs">
+         <!-- <img src="./static/imgs/login_title.png" class="imgs">-->
       </el-header>
       <el-main>
         <el-form ref="form" :model="form">
@@ -27,7 +27,7 @@
         </el-form>
       </el-main>
       <el-footer>
-        <img src="./static/imgs/login_bottom.png" class="imgs"/>
+       <!-- <img src="./static/imgs/login_bottom.png" class="imgs"/>-->
       </el-footer>
     </el-container>
   </div>
@@ -85,7 +85,8 @@
 <style scoped>
   .login {
     width: 100%;
-    background: url("./static/imgs/bg-24.png") no-repeat center;
+    /*background: url("./static/imgs/bg-24.png") no-repeat center;*/
+    background-color: gray;
     background-size: 100% 100%;
   }
 
