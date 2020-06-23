@@ -2,11 +2,11 @@
   <el-row>
     <el-col :span="4" class="ems_header_title"><span>新联电子能耗在线监测系统</span></el-col>
     <el-col :span="4" :offset="16">
-      <el-dropdown>
-        <el-avatar> user</el-avatar>
+      <el-dropdown @command="logOut">
+        <el-avatar> {{user}}</el-avatar>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>登出</el-dropdown-item>
-          <el-dropdown-item disabled>修改密码</el-dropdown-item>
+         <!-- <el-dropdown-item disabled>修改密码</el-dropdown-item>-->
         </el-dropdown-menu>
       </el-dropdown>
     </el-col>
@@ -16,7 +16,22 @@
 <script>
 
   export default {
-    name: "emsHeader"
+    name: "emsHeader",
+    data() {
+      return {
+        user:this.$cookies.get('name'),
+      }
+    },
+    methods: {
+      logOut() {
+        let self = this;
+        let cookieArray = self.$cookies.keys();
+        self.$router.push({ name: 'Login'});
+        cookieArray.forEach(function (item,index) {
+          self.$cookies.remove(item);
+        });
+      }
+    }
   }
 </script>
 
@@ -24,7 +39,7 @@
   .el-row {
     height: 100%;
     margin-left: -1%;
-    background: url("./static/imgs/top-bj-12.png") ;
+    background: url("./static/imgs/top-bj-12.png");
   }
 
   .el-avatar {
